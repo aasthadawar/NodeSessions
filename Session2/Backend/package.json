@@ -1,0 +1,30 @@
+{
+  "name": "session2",
+  "version": "1.0.0",
+  "description": "node bootcamp session2",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aasthadawar/NodeSessions.git"
+  },
+  "keywords": [
+    "node",
+    "bootcamp",
+    "sessions",
+    "lectures",
+    "rest",
+    "api"
+  ],
+  "author": "aastha",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aasthadawar/NodeSessions/issues"
+  },
+  "homepage": "https://github.com/aasthadawar/NodeSessions#readme",
+  "dependencies": {
+    "cors": "^2.8.5"
+  }
+}
