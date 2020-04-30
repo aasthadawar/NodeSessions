@@ -1,0 +1,20 @@
+.links a {
+  padding: 20px;
+  text-decoration: none;
+  color: darkblue;
+  padding-bottom: 10px;
+}
+
+.links a:hover {
+  color: red;
+  text-decoration: none;
+}
+
+.links {
+  margin: 20px;
+}
+
+.active{
+    padding-bottom: 0px;
+    border-bottom: 4px solid gray;
+}

@@ -1,0 +1,13 @@
+.about h1 {
+  text-align: center;
+  color: red;
+  margin-bottom: 40px;
+}
+
+.about p {
+  color: seagreen;
+}
+
+.about {
+  margin-top: 50px;
+}
