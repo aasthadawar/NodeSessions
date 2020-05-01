@@ -1,0 +1,23 @@
+{
+  "name": "session4backend",
+  "version": "1.0.0",
+  "description": "node session4 backend",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "node",
+    "session4",
+    "buffer",
+    "stream"
+  ],
+  "author": "aastha",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "circular-json": "^0.5.9",
+    "cors": "^2.8.5",
+    "express": "^4.17.1"
+  }
+}
