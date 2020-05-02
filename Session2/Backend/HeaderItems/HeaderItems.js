@@ -1,45 +1,28 @@
-const http = require('http');
 const url = require('url');
 const fs = require('fs');
 const path = require('path');
 
-const handleRequestResponse = (request, response) => {
-  response.setHeader('Access-Control-Allow-Origin', '*');
+const headerRequestResponse = (request, response) => {
   let route = url.parse(request.url).pathname;
+  let finalRoute = route.split('/')[2];
   let method = request.method;
   let fullPath;
+  if (method === 'GET') {
+       //route for home page
+  if (`/${finalRoute}` === '/home') {
+    let relativePath = '/public/Home.html';
+    fullPath = path.join(__dirname, relativePath);
+  } 
 
-  //route for home page
-  if (route === '/home') {
-    if (method === 'GET') {
-      let relativePath = '/public/Home.html';
-      fullPath = path.join(__dirname, relativePath);
-    } else {
-      response.end('wrong method');
-    }
-  }
+  else if (`/${finalRoute}` === '/about') {
+    let relativePath = '/public/About.html';
+    fullPath = path.join(__dirname, relativePath);
+  } 
 
-  // route for about page
-  else if (route === '/about') {
-    if (method === 'GET') {
-      let relativePath = '/public/About.html';
-      fullPath = path.join(__dirname, relativePath);
-    } else {
-      response.end('wrong method');
-    }
-  }
-
-  //route for contact page
-  else if (route === '/contact') {
-    if (method === 'GET') {
-      let relativePath = '/public/Contact.html';
-      fullPath = path.join(__dirname, relativePath);
-    } else {
-      response.end('wrong method');
-    }
-  } else {
-    response.end('wrong url');
-  }
+  if (`/${finalRoute}` === '/contact') {
+    let relativePath = '/public/Contact.html';
+    fullPath = path.join(__dirname, relativePath);
+  } 
 
   fs.readFile(fullPath, (err, content) => {
     if (err) {
@@ -49,10 +32,11 @@ const handleRequestResponse = (request, response) => {
       response.end();
     }
   });
+
+  } else {
+    response.end('wrong url');
+  } 
 };
 
-const server = http.createServer(handleRequestResponse);
+module.exports = headerRequestResponse
 
-server.listen(process.env.PORT || 2345, () => {
-  console.log('server start');
-});

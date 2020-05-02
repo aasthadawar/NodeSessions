@@ -1,17 +1,14 @@
-const http = require('http');
 const url = require('url');
+const studentsArray = require('./StudentsObject');
 
 // function to handle request response operations
-const handleRequestResponse = (request, response) => {
-  let route = url.parse(request.url).pathname;
+const studentRequestResponse = (request, response) => {
+  
   let method = request.method;
   let queryString = url.parse(request.url, true).query.branch;
 
   // for the students route
-  if (route === '/students') {
     if (method === 'GET') {
-      const studentsArray = require('./StudentsObject');
-      response.setHeader('Access-Control-Allow-Origin', '*');
       if (queryString === undefined) {
         var arr = studentsArray;
       } else {
@@ -23,13 +20,6 @@ const handleRequestResponse = (request, response) => {
     } else {
       response.end('wrong method');
     }
-  } else {
-    response.end('wrong url');
-  }
 };
 
-const server = http.createServer(handleRequestResponse);
-
-server.listen(process.env.PORT || 7890, () => {
-  console.log('server start');
-});
+module.exports = studentRequestResponse;
