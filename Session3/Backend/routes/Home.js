@@ -15,5 +15,4 @@ homeRouter.delete('/:id', (req, res) => {
   });
   res.json(usersArray);
 });
-
 module.exports = homeRouter;

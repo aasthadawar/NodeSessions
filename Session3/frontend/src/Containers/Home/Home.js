@@ -16,7 +16,6 @@ class Home extends Component {
       .catch((error) => console.log('error', error));
   }
   handleDelete = (deleteid) => {
-    console.log('delete id',deleteid);
     axios.delete(`http://localhost:9012/home/${deleteid}`)
       .then((response) => {
         this.setState({ ...this.state, usersArray: response.data });

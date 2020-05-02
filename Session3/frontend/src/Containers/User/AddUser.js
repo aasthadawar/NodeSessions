@@ -18,7 +18,6 @@ const AddUser = (props) => {
     axios
       .post('http://localhost:9012/users/', userObject)
       .then((response) => console.log(response));
-
     props.history.push('/');
     }
     else{
