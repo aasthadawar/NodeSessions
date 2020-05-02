@@ -18,7 +18,7 @@ const AddUser = (props) => {
     axios
       .post('http://localhost:9012/users/', userObject)
       .then((response) => console.log(response));
-    props.history.push('/');
+      props.history.push('/');
     }
     else{
       alert('fill the correct details')
