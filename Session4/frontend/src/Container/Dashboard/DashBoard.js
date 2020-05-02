@@ -13,7 +13,7 @@ class Dashboard extends Component {
         this.setState({ ...this.state, found: response.data });
       })
       .catch((err) => {
-        this.props.history.push('/login');
+        this.props.history.push('/');
       });
   }
   render() {
