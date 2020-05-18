@@ -1,0 +1,22 @@
+.form{
+    margin: 0 auto;
+    width: 35%;
+    overflow-x: hidden;
+    margin-top: 50px;
+    border: 2px solid gray;
+    padding: 50px;
+    text-align: center;
+}
+
+.form a{
+    padding: 10px;
+    text-decoration: none;
+    background-color: blue;
+    margin: 10px;
+    color: white;
+}
+
+.form a:hover{
+    text-decoration: none;
+    color: white;
+}
