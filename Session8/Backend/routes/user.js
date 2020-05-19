@@ -44,7 +44,7 @@ userRoute.get(
   passport.authenticate('google', { session: false }),
   (req, res) => {
     let genToken = token.createToken(req.user._json.email);
-    res.redirect(`http://localhost:3000/dashboard/?${genToken}`);
+    res.redirect(`http://localhost:3000/verify/?${genToken}`);
 }
 );
 

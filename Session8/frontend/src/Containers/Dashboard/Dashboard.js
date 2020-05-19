@@ -7,13 +7,13 @@ class Dashboard extends Component {
     found: '',
   };
   componentDidMount() {
-    console.log('token ', this.props.location.search);
+   /* console.log('token ', this.props.location.search);
     if(this.props.location.search){
       localStorage.setItem('token',this.props.location.search.split('?')[1] );
     Object.assign(axios.defaults, {
       headers: { 'x-access-token': localStorage.getItem('token') },
     });
-    }
+    }*/
     axios
       .get('http://localhost:1234/dashboard')
       .then((response) => {
