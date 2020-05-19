@@ -28,7 +28,8 @@ userRoute.post(
 
 userRoute.post('/signup', userController.create);
 
-userRoute.get('/dashboard', authMiddleware, (req, res) => {});
+userRoute.get('/dashboard', authMiddleware , (req, res) => {
+});
 
 userRoute.get(
   '/auth',
@@ -42,17 +43,8 @@ userRoute.get(
   '/auth/cb',
   passport.authenticate('google', { session: false }),
   (req, res) => {
-    //console.log('profile', req.user._json.email);
     let genToken = token.createToken(req.user._json.email);
-    //console.log('token is::;;',genToken);
-    req.headers['x-access-token'] = genToken;
-    //console.log('req headers',req.headers['x-access-token']);
-    if(req.headers['x-access-token']){
-      res.send(`Welcome  ${req.user._json.name}`)
-    }
-    else{
-      res.status(401).send('invalid token');
-    }
+    res.redirect(`http://localhost:3000/dashboard/?${genToken}`);
 }
 );
 

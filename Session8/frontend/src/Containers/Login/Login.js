@@ -11,9 +11,9 @@ class Login extends Component{
         error: false,
         result: true
     }
-    handleLoginWithGmail = () => {
-       axios.get('http://localhost:1234/auth')
-       .then(response=>console.log('response is:::;;;;',response))
+    handleGmail=()=>{
+      axios.get('http://localhost:1234/auth')
+      .then(res=> console.log(res));
     }
     handleLogin = () => {
         let email = document.getElementById('email').value;
